@@ -1,0 +1,252 @@
+@font-face {
+    font-family: "HelveticaRegular";
+    src: url(/sites/all/modules/custom_form_test/fonts/HelveticaRegular/HelveticaRegular.eot);
+    src: url(/sites/all/modules/custom_form_test/fonts/HelveticaRegular/HelveticaRegular.eot?#iefix) format("embedded-opentype"),url(/sites/all/modules/custom_form_test/fonts/HelveticaRegular/HelveticaRegular.woff) format("woff"),url(/sites/all/modules/custom_form_test/fonts/HelveticaRegular/HelveticaRegular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "HelveticaLight";
+    src: url(/sites/all/modules/custom_form_test/fonts/HelveticaLight/HelveticaLight.eot);
+    src: url(/sites/all/modules/custom_form_test/fonts/HelveticaLight/HelveticaLight.eot?#iefix) format("embedded-opentype"),url(/sites/all/modules/custom_form_test/fonts/HelveticaLight/HelveticaLight.woff) format("woff"),url(/sites/all/modules/custom_form_test/fonts/HelveticaLight/HelveticaLight.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "HelveticaThin";
+    src: url(/sites/all/modules/custom_form_test/fonts/HelveticaThin/HelveticaThin.eot);
+    src: url(/sites/all/modules/custom_form_test/fonts/HelveticaThin/HelveticaThin.eot?#iefix) format("embedded-opentype"),url(/sites/all/modules/custom_form_test/fonts/HelveticaThin/HelveticaThin.woff) format("woff"),url(/sites/all/modules/custom_form_test/fonts/HelveticaThin/HelveticaThin.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "HelveticaLight";
+}
+
+input:focus,select:focus,button:focus {
+    outline: none;
+}
+
+.form-item {
+    margin: 0 0 19px 0;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.95;
+}
+
+.custom-form-test form {
+    width: 470px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.custom-form-test form .logo {
+    margin-top: 55px;
+}
+
+.custom-form-test form .logo a {
+    background: url(/sites/all/modules/custom_form_test/images/logo.png) no-repeat center;
+    font-size: 0;
+    width: 430px;
+    height: 29px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.custom-form-test form > div > fieldset {
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,0.25);
+    background: #64b8df;
+    width: 440px;
+    min-width: 460px;
+    /* margin:0 auto; */
+    position: relative;
+    top: initial;
+    border: 0;
+    padding: 0px 52px 23px;
+}
+
+.custom-form-test form > div > fieldset .fieldset-wrapper {
+    padding: 0;
+    margin-top: 58px;
+    text-align: center;
+}
+
+.custom-form-test form > div > fieldset legend {
+    font-family: "HelveticaThin";
+    color: #ffffff;
+    font-size: 28px;
+    line-height: 20px;
+    background: none;
+    border: 0;
+    text-shadow: none;
+    text-indent: 0;
+    height: auto;
+    top: initial;
+}
+
+.custom-form-test form > div > fieldset input,.custom-form-test form > div > fieldset select {
+    font-family: "HelveticaLight";
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 20px;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    border-bottom: 1px solid #fff;
+}
+
+.custom-form-test form > div > fieldset select {
+    color: rgba(255,255,255,0.5);
+}
+
+.custom-form-test form > div > fieldset option {
+    color: #000;
+}
+
+.custom-form-test form > div > fieldset select {
+    width: 100%;
+}
+
+.custom-form-test form > div > fieldset select:checked {
+    color: #fff;
+}
+
+.custom-form-test form > div > fieldset input {
+    width: 100%;
+    padding: 0 0 6px 13px;
+}
+
+.custom-form-test form > div > fieldset input::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.custom-form-test form > div > fieldset input::-moz-placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.custom-form-test form > div > fieldset input:-ms-input-placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.custom-form-test form > div > fieldset input:-moz-placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.custom-form-test form > div > fieldset .form-item-domain {
+    width: 212px;
+    float: left;
+    margin-right: 12px;
+}
+
+.custom-form-test form > div > fieldset .form-item-code {
+    width: 71px;
+    float: left;
+    margin-right: 18px;
+    margin-bottom: 0;
+}
+
+.custom-form-test form > div > fieldset .form-item-phone {
+    width: 267px;
+    float: left;
+    margin-bottom: 0;
+}
+
+.custom-form-test form > div > fieldset .suffix-domain {
+    font-family: "HelveticaLight";
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 20px;
+    float: left;
+    margin-top: 13px;
+}
+
+.custom-form-test form > div > fieldset #edit-submit {
+    border-radius: 4px;
+    background-color: #f27b30;
+    width: 356px;
+    height: 55px;
+    font-family: "HelveticaRegular";
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 20px;
+    text-align: center;
+    box-shadow: none;
+    border: 0;
+    padding: 0;
+    margin: 29px auto 20px auto;
+    display: inline-block;
+}
+
+.custom-form-test form > div > fieldset .create-account {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 16px;
+}
+
+.custom-form-test form > div > fieldset .create-account a {
+    font-family: "HelveticaLight";
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.custom-form-test form label.error {
+    font-family: "HelveticaLight";
+    font-size: 11px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.custom-form-test form > div > div {
+    display: inline-block;
+    margin-top: 27px;
+}
+
+.custom-form-test form > div > .main-page {
+    padding-right: 21px;
+    border-right: 1px solid #5e6464;
+}
+
+.custom-form-test form > div > .contacts {
+    padding-left: 26px;
+}
+
+.custom-form-test form > div > div a {
+    font-family: "HelveticaLight";
+    color: #5e6464;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 26.667px;
+}
+
+span.fieldset-legend {
+    vertical-align: -53px;
+}
+
+.form-item input.error,.form-item textarea.error,.form-item select.error {
+    border: 0;
+    border-bottom: 1px solid red;
+}
+
+div#domain-ajax > div > .messages.error {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+    text-align: left;
+    font-size: 11px;
+}
+
+.ajax-progress.ajax-progress-throbber {
+    display: none !important;
+}

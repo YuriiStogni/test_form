@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function custom_form_test_menu() {
+  $items = [];
+
+  $items['custom-form-test'] = [
+    'title' => 'Registration | Terrasoft',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['custom_form_test_registration_form'],
+    'access callback' => TRUE,
+    'file' => 'custom_form_test.registration.form.inc',
+    'file path' => drupal_get_path('module', 'custom_form_test') . '/includes',
+  ];
+  return $items;
+}
+
+/**
+ * Implements hook_preprocess_html().
+ *
+ * @param $variables
+ */
+function custom_form_test_preprocess_html(&$variables) {
+  $path = drupal_get_path_alias();
+  $user_path = array('custom-form-test');
+  if (in_array($path, $user_path)) {
+    $variables['classes_array'][] = 'custom-form-test';
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ *
+ * @param $theme_registry
+ */
+function custom_form_test_theme_registry_alter(&$theme_registry) {
+  $module_path = drupal_get_path('module', 'custom_form_test');
+  $theme_registry['custom-form-test'] = [
+    'template' => $module_path . '/templates/page--custom-form-test',
+    'type' => 'theme_engine',
+    'theme path' => $module_path . '/templates',
+    'render element' => 'page',
+  ];
+}
+
+/**
+ * Implements hook_preprocess_page() for page--custom-form-test.tpl.php.
+ *
+ * @param $variables
+ * @param $hook
+ */
+function custom_form_test_preprocess_page(&$variables, $hook) {
+  $path = drupal_get_path_alias();
+  $user_path = [
+    'custom-form-test',
+  ];
+  if (in_array($path, $user_path)) {
+    $array = ['type' => 'file', 'weight' => 999, 'group' => CSS_THEME];
+    drupal_add_js(drupal_get_path('module', 'custom_form_test') . '/js/jquery.maskedinput.min.js');
+    drupal_add_js(drupal_get_path('module', 'custom_form_test') . '/js/jquery.validate.min.js');
+    drupal_add_js(drupal_get_path('module', 'custom_form_test') . '/js/custom_form_test.js');
+    drupal_add_css(drupal_get_path('module', 'custom_form_test') . '/css/registration_form.css', $array);
+    $variables['theme_hook_suggestions'][] = 'custom-form-test';
+
+  }
+}
+
+

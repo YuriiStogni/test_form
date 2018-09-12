@@ -1,0 +1,5 @@
+name = Custom Form Test
+description = Test task Terrasoft<a href="/custom-form">Form Page</a>
+configure = custom-form-test
+core = 7.x
+

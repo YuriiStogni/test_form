@@ -1,0 +1,102 @@
+<?php
+
+/**
+ * Implements hook_install()
+ */
+function custom_form_test_install() {
+
+  $values = [
+    [
+      'domain' => 'test1',
+      'login' => 'test',
+      'country' => 'UK',
+      'city' => NULL,
+      'phone' => '123456789',
+    ],
+    [
+      'domain' => 'test2',
+      'login' => 'test',
+      'country' => 'UK',
+      'city' => NULL,
+      'phone' => '123456789',
+    ],
+    [
+      'domain' => 'test3',
+      'login' => 'test',
+      'country' => 'UK',
+      'city' => NULL,
+      'phone' => '123456789',
+    ],
+  ];
+  $query = db_insert('registration_form')->fields([
+    'domain',
+    'login',
+    'country',
+    'city',
+    'phone'
+  ]);
+  foreach ($values as $record) {
+    $query->values($record);
+  }
+  $query->execute();
+}
+
+/**
+ * Implements hook_schema().
+ */
+function custom_form_test_schema() {
+
+  $schema = [];
+
+  $schema['registration_form'] = [
+
+    'description' => 'First Table for form example by tushar',
+    'fields' => [
+      'reg_id' => [
+         'description' => 'The primary identifier for a form example.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'domain' => [
+        'description' => 'Field for domain name',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+      'login' => [
+        'description' => 'Field for login name',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+      'country' => [
+        'description' => 'Field for country',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+      'city' => [
+        'description' => 'Field for city',
+        'type' => 'text',
+        'not null' => FALSE,
+      ],
+      'phone' => [
+        'description' => 'Field for phone number',
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['reg_id'],
+ ];
+
+  return $schema;
+}
+
+/**
+ * Implement hook_uninstall().
+ */
+function custom_form_test_uninstall() {
+  //Check if table exists.
+  if (db_table_exists('registration_form')) {
+    db_delete('registration_form')
+      ->execute();
+  }
+}
